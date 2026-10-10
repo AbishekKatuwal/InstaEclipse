@@ -19,8 +19,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
+    - name: Create local.properties for SDK path
+      run: echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
+
+    - name: Accept Android SDK Licenses
+      run: |
+        SDKMANAGER=$(find /usr/local/lib/android/sdk -name sdkmanager | head -n 1)
+        yes | $SDKMANAGER --licenses > /dev/null 2>&1 || true
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
