@@ -113,4 +113,6 @@ public class FeatureFlags {
     public static String  customEmojiPath = "";        // path to the user-picked EmojiCompat emoji font
     public static String  downloaderCustomPath = "";   // human-readable display path
     public static String  downloaderCustomUri  = "";   // SAF tree URI string for actual writes
+    public static boolean trackInstantViewers = false; // Track who viewed my Instants
 }
+
