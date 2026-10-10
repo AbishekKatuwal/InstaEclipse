@@ -235,7 +235,7 @@ public class InstantUploadHook {
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lp.gravity = Gravity.BOTTOM | Gravity.START;
             lp.leftMargin = dp(act, 20);
-            lp.bottomMargin = dp(act, 120);
+            lp.bottomMargin = dp(act, 400);
             c.setLayoutParams(lp);
             c.setOnClickListener(v -> launchPicker(act));
 
