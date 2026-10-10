@@ -229,6 +229,10 @@ public class FeatureManager {
             FeatureStatusTracker.setEnabled("DisableDoubleTapLike", R.string.ig_dialog_misc_disable_double_tap_like);
         } else {
             FeatureStatusTracker.setDisabled("DisableDoubleTapLike");
+        if (FeatureFlags.trackInstantViewers) {
+            FeatureStatusTracker.setEnabled("TrackInstantViewers", R.string.ig_dialog_ghost_keep_unsent);
+        } else {
+            FeatureStatusTracker.setDisabled("TrackInstantViewers");
         }
     }
 }
