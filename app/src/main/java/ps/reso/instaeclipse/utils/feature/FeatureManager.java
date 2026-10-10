@@ -230,12 +230,6 @@ public class FeatureManager {
         } else {
             FeatureStatusTracker.setDisabled("DisableDoubleTapLike");
         }
-
-        // NEW FEATURE: Track Instant Viewers
-        if (FeatureFlags.trackInstantViewers) {
-            FeatureStatusTracker.setEnabled("TrackInstantViewers", R.string.ig_dialog_ghost_keep_unsent);
-        } else {
-            FeatureStatusTracker.setDisabled("TrackInstantViewers");
-        }
+        
     }
     }
