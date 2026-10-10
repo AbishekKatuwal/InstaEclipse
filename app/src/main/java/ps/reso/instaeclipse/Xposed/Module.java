@@ -410,6 +410,13 @@ public class Module implements IXposedHookLoadPackage, IXposedHookZygoteInit {
                         ModuleLog.line("(InstaEclipse | InstantSave): ❌ Failed to hook");
                     }
 
+                    // Track Instant Viewers (NEW)
+                    try {
+                        new ps.reso.instaeclipse.mods.media.InstantViewerTracker().install(lpparam.classLoader);
+                    } catch (Throwable ignored) {
+                        ModuleLog.line("(InstaEclipse | InstantTracker): ❌ Failed to hook");
+                    }
+
                     // Upload Instants from gallery (#199) — swap gallery bitmap into quicksnap send
                     try {
                         new ps.reso.instaeclipse.mods.media.InstantUploadHook().install(lpparam.classLoader);
