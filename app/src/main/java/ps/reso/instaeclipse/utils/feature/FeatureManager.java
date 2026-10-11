@@ -37,7 +37,6 @@ public class FeatureManager {
             FeatureStatusTracker.setDisabled("GhostViewOnce");
         }
 
-
         if (FeatureFlags.isGhostStory) {
             FeatureStatusTracker.setEnabled("GhostStories", R.string.ig_dialog_ghost_hide_story_views);
         } else {
@@ -74,10 +73,6 @@ public class FeatureManager {
             FeatureStatusTracker.setDisabled("KeepUnsentMessages");
         }
 
-        // Auto-Clear Cache is a filesystem operation (clears IG's cache dirs on background),
-        // not an Instagram-code hook, so it has no meaningful ✅/❌ "hooked" state — intentionally
-        // omitted from the load toast (it was always showing a ❌ despite working).
-
         if (FeatureFlags.removeMetaAI) {
             FeatureStatusTracker.setEnabled("RemoveMetaAI", R.string.ig_dialog_misc_remove_meta_ai);
         } else {
@@ -108,7 +103,6 @@ public class FeatureManager {
         } else {
             FeatureStatusTracker.setDisabled("HideThreadsSuggestions");
         }
-
 
         // Miscellaneous
         if (FeatureFlags.disableTrackingLinks) {
@@ -230,5 +224,5 @@ public class FeatureManager {
         } else {
             FeatureStatusTracker.setDisabled("DisableDoubleTapLike");
         }
-    
     }
+                                            }
