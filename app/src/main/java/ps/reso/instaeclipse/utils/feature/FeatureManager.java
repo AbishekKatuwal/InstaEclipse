@@ -230,6 +230,12 @@ public class FeatureManager {
         } else {
             FeatureStatusTracker.setDisabled("DisableDoubleTapLike");
         }
+
         
-    }
+        if (FeatureFlags.liveLocationEnabled) {
+           FeatureStatusTracker.setEnabled("LiveLocation", R.string.ig_dialog_location_spoof_enable);
+        } else {
+           FeatureStatusTracker.setDisabled("LiveLocation");
+        }
+    
     }
