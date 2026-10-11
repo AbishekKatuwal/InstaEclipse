@@ -114,4 +114,10 @@ public class FeatureFlags {
     public static String  downloaderCustomPath = "";   // human-readable display path
     public static String  downloaderCustomUri  = "";   // SAF tree URI string for actual writes
     public static boolean trackInstantViewers = false; // Track who viewed my Instants
+
+    // Live Location (moving fake GPS)
+    public static boolean liveLocationEnabled = false;
+    public static double  liveLocationAnchorLat = 0.0;
+    public static double  liveLocationAnchorLng = 0.0;
+    public static int     liveLocationRadiusMeters = 150;
 }
