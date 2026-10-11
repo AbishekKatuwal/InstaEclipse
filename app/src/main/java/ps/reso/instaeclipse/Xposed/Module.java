@@ -361,6 +361,13 @@ public class Module implements IXposedHookLoadPackage, IXposedHookZygoteInit {
                         ModuleLog.line("(InstaEclipse | SpoofLocation): ❌ Failed to hook");
                     }
 
+                    // Live Location — starts the random-walk timer for spoofed GPS
+                    try {
+                        ps.reso.instaeclipse.mods.location.LiveLocationMover.start();
+                    } catch (Throwable ignored) {
+                        ModuleLog.line("(InstaEclipse | LiveLocation): ❌ Failed to start");
+                    }
+
                     // Custom Theme
                     try {
                         new IgThemeHook().install(hostClassLoader);
