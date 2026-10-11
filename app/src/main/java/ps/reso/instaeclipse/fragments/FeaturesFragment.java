@@ -952,7 +952,10 @@ public class FeaturesFragment extends Fragment {
         List<Object> defs = new ArrayList<>();
 
         defs.add(getString(R.string.feat_features));
-        defs.add(Arrays.asList(createSwitch(R.drawable.ic_pin, "#FFD60A", getString(R.string.ig_dialog_location_spoof_enable), "spoofLocation")));
+        defs.add(Arrays.asList(
+                createSwitch(R.drawable.ic_pin, "#FFD60A", getString(R.string.ig_dialog_location_spoof_enable), "spoofLocation"),
+                createSwitch(R.drawable.ic_pin, "#FFD60A", "Live Location (moving GPS)", "liveLocationEnabled")
+        ));
 
         double lat = 0.0, lng = 0.0;
         try { lat = Double.parseDouble(localCache.getString("spoofLat", "0")); } catch (Throwable ignored) {}
